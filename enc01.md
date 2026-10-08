@@ -459,12 +459,12 @@ Template completo: <code>materiais/AGENTS.md</code> (adaptado do template do cur
 </div>
 
 <div class="mt-2 text-xs opacity-60 leading-5">
-✗ errou · ✓ acertou · – ainda não testado · * não executou o script · † sessão reaproveitada do 3A, a repetir<br>
+✗ errou · ✓ acertou · – ainda não testado · * não executou o script · † repetido em sessão nova; resultado reproduzido a partir do script do agente (a resposta não foi registrada)<br>
 Uma execução por célula. Subagentes do Claude (9 execuções no caso 3, instruídos a ler o arquivo) acertaram tudo; sem o arquivo, no caso 1, também (6 de 6): o ganho neles não é claro.
 </div>
 
 <!--
-Resultados completos e notas por execução: testes-agents/RESULTADOS.md. O canário "Instruções lidas." confirma que o arquivo foi carregado. Completar as células "–" quando a cota do Antigravity voltar; repetir o 3B genérico em sessão nova.
+Resultados completos e notas por execução: testes-agents/RESULTADOS.md. O canário "Instruções lidas." confirma que o arquivo foi carregado. Completar as células "–" quando a cota do Antigravity voltar.
 -->
 
 ---
@@ -588,7 +588,7 @@ DataLad · Nextflow · LaminDB
 </div>
 
 <div class="mt-3 text-xs opacity-70 leading-5">
-Fontes: <code>K-Dense-AI/scientific-agent-skills</code> (177 skills, MIT, licença por skill) · <code>jinzhezenggroup/computational-chemistry-agent-skills</code> (LGPLv3) · <code>ChenLiu-1996/figures4papers</code> (licença a confirmar) · <code>claesbackman/AI-research-feedback</code><br>
+Fontes: <a href="https://github.com/K-Dense-AI/scientific-agent-skills"><code>K-Dense-AI/scientific-agent-skills</code></a> (177 skills, MIT, licença por skill) · <a href="https://github.com/jinzhezenggroup/computational-chemistry-agent-skills"><code>jinzhezenggroup/computational-chemistry-agent-skills</code></a> (LGPLv3) · <a href="https://github.com/ChenLiu-1996/figures4papers"><code>ChenLiu-1996/figures4papers</code></a> (licença a confirmar) · <a href="https://github.com/claesbackman/AI-research-feedback"><code>claesbackman/AI-research-feedback</code></a> (MIT)<br>
 Lista completa e comentada: <code>skills-candidatos.md</code>
 </div>
 

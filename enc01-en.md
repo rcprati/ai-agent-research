@@ -460,12 +460,12 @@ Full template: <code>materials/AGENTS.md</code> (adapted from the Learn Harness 
 </div>
 
 <div class="mt-2 text-xs opacity-60 leading-5">
-✗ wrong · ✓ right · – not tested yet · * did not run the script · † session reused from 3A, to be repeated<br>
+✗ wrong · ✓ right · – not tested yet · * did not run the script · † repeated in a fresh session; result reproduced from the agent's script (its answer was not recorded)<br>
 One run per cell. Claude subagents (9 runs in case 3, told to read the file) got everything right; without the file, in case 1, they also did (6 of 6): the gain for them is unclear.
 </div>
 
 <!--
-Full results and per-run notes: testes-agents/RESULTADOS.md. The "Instruções lidas." canary confirms the file was loaded. Fill in the "–" cells when the Antigravity quota returns; repeat the generic 3B in a fresh session. The original runs were in Portuguese; numbers are the same.
+Full results and per-run notes: testes-agents/RESULTADOS.md. The "Instruções lidas." canary confirms the file was loaded. Fill in the "–" cells when the Antigravity quota returns; The original runs were in Portuguese; numbers are the same.
 -->
 
 ---
@@ -589,7 +589,7 @@ DataLad · Nextflow · LaminDB
 </div>
 
 <div class="mt-3 text-xs opacity-70 leading-5">
-Sources: <code>K-Dense-AI/scientific-agent-skills</code> (177 skills, MIT, license per skill) · <code>jinzhezenggroup/computational-chemistry-agent-skills</code> (LGPLv3) · <code>ChenLiu-1996/figures4papers</code> (license to be confirmed) · <code>claesbackman/AI-research-feedback</code><br>
+Sources: <a href="https://github.com/K-Dense-AI/scientific-agent-skills"><code>K-Dense-AI/scientific-agent-skills</code></a> (177 skills, MIT, license per skill) · <a href="https://github.com/jinzhezenggroup/computational-chemistry-agent-skills"><code>jinzhezenggroup/computational-chemistry-agent-skills</code></a> (LGPLv3) · <a href="https://github.com/ChenLiu-1996/figures4papers"><code>ChenLiu-1996/figures4papers</code></a> (license to be confirmed) · <a href="https://github.com/claesbackman/AI-research-feedback"><code>claesbackman/AI-research-feedback</code></a> (MIT)<br>
 Full annotated list: <code>skills-candidates.md</code>
 </div>
 

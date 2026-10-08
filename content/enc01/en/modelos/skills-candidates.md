@@ -17,7 +17,7 @@ From [K-Dense scientific-agent-skills](https://github.com/K-Dense-AI/scientific-
 - **statsmodels**, **scikit-learn**, **PyMC** (Bayesian), **scikit-survival**, **SHAP** (interpretability)
 
 Others:
-- ★ [AI-research-feedback](https://www.sourcepulse.org/projects/27605239) (claesbackman): `review-paper-code` links claims in a LaTeX paper to the analysis code (Stata, R, Python) to check reproducibility
+- ★ [AI-research-feedback](https://github.com/claesbackman/AI-research-feedback) (claesbackman): `review-paper-code` links claims in a LaTeX paper to the analysis code (Stata, R, Python) to check reproducibility
 - [Claude-Code-Scientist, peer-review](https://openskillindex.com/skills/rhowardstone-claude-code-scientist-peer-review): three simulated reviewers (methodology, statistics, impact); the statistics reviewer checks effect size, confidence intervals, and multiple-testing correction
 - Anthropic use case, ["verify statistics from raw data"](https://claude.com/resources/use-case/verify-statistics-from-raw-data): extracts every statistical claim from the text and reruns the analysis (a prompt example, not a package)
 

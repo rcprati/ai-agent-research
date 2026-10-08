@@ -17,7 +17,7 @@ Do [K-Dense scientific-agent-skills](https://github.com/K-Dense-AI/scientific-ag
 - **statsmodels**, **scikit-learn**, **PyMC** (bayesiano), **scikit-survival**, **SHAP** (interpretabilidade)
 
 Outros:
-- ★ [AI-research-feedback](https://www.sourcepulse.org/projects/27605239) (claesbackman): `review-paper-code` liga afirmações do artigo LaTeX ao código de análise (Stata, R, Python) para checar reprodutibilidade
+- ★ [AI-research-feedback](https://github.com/claesbackman/AI-research-feedback) (claesbackman): `review-paper-code` liga afirmações do artigo LaTeX ao código de análise (Stata, R, Python) para checar reprodutibilidade
 - [Claude-Code-Scientist, peer-review](https://openskillindex.com/skills/rhowardstone-claude-code-scientist-peer-review): três revisores simulados (metodologia, estatística, impacto); o revisor de estatística checa tamanho de efeito, IC e correção para múltiplos testes
 - Caso de uso da Anthropic, ["verificar estatísticas a partir dos dados brutos"](https://claude.com/resources/use-case/verify-statistics-from-raw-data): extrai cada afirmação estatística do texto e reexecuta a análise (é um exemplo de prompt, não um pacote)
 
