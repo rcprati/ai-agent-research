@@ -1,0 +1,11 @@
+# SIMPLIFIED EXCERPT IN ORCA STYLE, synthetic data generated with PySCF. Not real ORCA output.
+! B3LYP def2-SVP
+
+  H 0 0 0
+  F 0 0 0.917
+
+SCF CONVERGED AFTER 9 CYCLES
+
+FINAL SINGLE POINT ENERGY   -100.353159197473
+
+                             ****ORCA TERMINATED NORMALLY****

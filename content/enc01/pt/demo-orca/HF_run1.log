@@ -1,0 +1,17 @@
+# EXCERTO SIMPLIFICADO NO ESTILO ORCA, dados sinteticos gerados com PySCF. Nao e saida real do ORCA.
+! B3LYP def2-SVP
+
+  H 0 0 0
+  F 0 0 0.917
+
+SCF ITERATIONS
+  Iter   Energy
+   1   -100.0736656501
+   2   -100.2736656501
+
+*****************************************************
+*   ERROR: SCF NOT CONVERGED AFTER 2 CYCLES        *
+*****************************************************
+Total Energy (ultimo ciclo)  -100.273665650111 Eh
+
+                             ****ORCA finished by error termination****

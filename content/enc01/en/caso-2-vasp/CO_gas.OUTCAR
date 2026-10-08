@@ -1,0 +1,18 @@
+# SYNTHETIC EXCERPT IN VASP STYLE. Fictional data. Not real VASP output.
+ SYSTEM = CO gas
+ ENCUT  =  520.0 eV
+ ISPIN  =  1
+ NSW    =  50
+ EDIFFG = -0.02
+
+----------------------------------------  ionic step 1  ----------------------------------------
+  free  energy   TOTEN  =      -14.71000000 eV
+  energy  without entropy=     -14.70880000  energy(sigma->0) =     -14.70940000
+
+----------------------------------------  ionic step 2  ----------------------------------------
+  free  energy   TOTEN  =      -14.78000000 eV
+  energy  without entropy=     -14.77880000  energy(sigma->0) =     -14.77940000
+
+ reached required accuracy - stopping structural energy minimisation
+
+ General timing and accounting informations for this job:

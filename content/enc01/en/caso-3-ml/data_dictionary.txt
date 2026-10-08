@@ -1,0 +1,11 @@
+Data dictionary (compiled by a colleague)
+
+regression_data.csv
+  d1..d5                  descriptors computed for each structure
+  energy                  target: energy computed in this round
+  previous_calc_energy    energy from the previous round, obtained from the target itself
+                          (copied before the correction); NOT a descriptor, it just stayed in the file
+
+clustering_data.csv
+  radius_A                radius in angstrom (values around 1)
+  energy_meV              energy in milli-electron-volts (values around 1000)

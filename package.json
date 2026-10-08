@@ -1,0 +1,16 @@
+{
+  "name": "grupo-estudo-ia-codigo",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "slidev enc01.md --open",
+    "dev:en": "slidev enc01-en.md --open",
+    "build": "python3 scripts/build_site.py"
+  },
+  "dependencies": {
+    "@iconify-json/carbon": "^1.2.25",
+    "@slidev/cli": "52.19.0",
+    "@slidev/theme-seriph": "^0.25.0",
+    "vue": "^3.5.0"
+  }
+}
