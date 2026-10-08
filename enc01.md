@@ -75,19 +75,23 @@ Mais autonomia = mais produtividade <b>e</b> mais lugares para um erro passar de
 
 ---
 
-# Claude Code, Antigravity e OpenCode: a mesma ideia
+# Claude Code, Antigravity e OpenCode
 
-| | Claude Code | Google Antigravity | OpenCode |
+<div class="text-sm">
+
+| | Claude Code | Antigravity | OpenCode |
 |---|---|---|---|
-| Onde roda | Terminal, app desktop, extensões de IDE | Editor próprio (IDE) e CLI | Terminal, app desktop, extensão de IDE |
-| Faz | Lê, edita, executa comandos | Idem, com painel de agentes | Idem |
-| Custo | Assinatura ou chave de API | Cota gratuita limitada | Ferramenta **gratuita e de código aberto**; o custo vem do modelo |
-| Arquivo de instruções | `CLAUDE.md` | `AGENTS.md` / `GEMINI.md` | `AGENTS.md` (o comando `/init` cria) |
-| Skills reutilizáveis | Sim | Sim | Sim |
+| Onde roda | Terminal, desktop, IDE | IDE própria e CLI | Terminal, desktop, IDE |
+| Faz | Lê, edita, executa | Idem, com painel de agentes | Idem |
+| Custo | Assinatura ou API | Cota gratuita limitada | **Gratuito, código aberto**; paga-se o modelo |
+| Instruções | `CLAUDE.md` | `AGENTS.md` / `GEMINI.md` | `AGENTS.md` (`/init`) |
+| Skills | Sim | Sim | Sim |
 
-<div class="mt-4 text-sm opacity-70 leading-6">
-Tudo o que veremos hoje vale para as três. O que muda é onde clicar, o custo e o nome do arquivo de instruções.<br>
-O OpenCode usa vários provedores de modelo (com chave de API, e modelos gratuitos ou locais quando disponíveis: confira).
+</div>
+
+<div class="mt-3 text-xs opacity-70 leading-5">
+Tudo o que veremos vale para as três: muda onde clicar, o custo e o nome do arquivo de instruções.
+O OpenCode usa vários provedores de modelo (chave de API; modelos gratuitos ou locais quando disponíveis: confira).
 </div>
 
 <!--
@@ -201,7 +205,7 @@ Obs.: três subagentes descreveram o erro "que sairia" pelo CSV com números inv
 
 ---
 
-# Caso 2: energia de adsorção (VASP, dados fictícios)
+# Caso 2: adsorção (VASP, dados fictícios)
 
 <div class="mt-1 text-sm opacity-70">Antigravity · mesmo tipo de pedido · cinco <code>OUTCAR</code> e um <code>resumo.csv</code></div>
 

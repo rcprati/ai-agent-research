@@ -74,19 +74,23 @@ More autonomy = more productivity <b>and</b> more places for an error to slip by
 
 ---
 
-# Claude Code, Antigravity and OpenCode: the same idea
+# Claude Code, Antigravity and OpenCode
 
-| | Claude Code | Google Antigravity | OpenCode |
+<div class="text-sm">
+
+| | Claude Code | Antigravity | OpenCode |
 |---|---|---|---|
-| Where it runs | Terminal, desktop app, IDE extensions | Its own editor (IDE) and CLI | Terminal, desktop app, IDE extension |
-| What it does | Reads, edits, runs commands | Same, with an agent panel | Same |
-| Cost | Subscription or API key | Limited free quota | **Free, open-source** tool; the cost comes from the model |
-| Instructions file | `CLAUDE.md` | `AGENTS.md` / `GEMINI.md` | `AGENTS.md` (the `/init` command creates it) |
-| Reusable skills | Yes | Yes | Yes |
+| Where it runs | Terminal, desktop, IDE | Own IDE and CLI | Terminal, desktop, IDE |
+| What it does | Reads, edits, runs | Same, with an agent panel | Same |
+| Cost | Subscription or API | Limited free quota | **Free, open source**; you pay for the model |
+| Instructions | `CLAUDE.md` | `AGENTS.md` / `GEMINI.md` | `AGENTS.md` (`/init`) |
+| Skills | Yes | Yes | Yes |
 
-<div class="mt-4 text-sm opacity-70 leading-6">
-Everything we cover today applies to all three. What changes is where to click, the cost, and the name of the instructions file.<br>
-OpenCode works with many model providers (with an API key, and free or local models when available: check).
+</div>
+
+<div class="mt-3 text-xs opacity-70 leading-5">
+Everything we cover applies to all three: what changes is where to click, the cost, and the name of the instructions file.
+OpenCode works with many model providers (API key; free or local models when available: check).
 </div>
 
 <!--
@@ -201,7 +205,7 @@ Note: three subagents described the error that "would result" from the CSV with 
 
 ---
 
-# Case 2: adsorption energy (VASP, fictional data)
+# Case 2: adsorption (VASP, fictional data)
 
 <div class="mt-1 text-sm opacity-70">Antigravity · same kind of request · five <code>OUTCAR</code> files and a <code>summary.csv</code></div>
 
