@@ -1,23 +1,55 @@
 {
   "site_title": {
-    "pt": "Grupo de Estudo: IA para Código na Pesquisa",
-    "en": "Study Group: AI Coding Tools in Research"
+    "pt": "IA para Código na Pesquisa",
+    "en": "AI Coding Tools in Research"
   },
   "meetings": [
     {
       "id": "enc01",
-      "date": "2026-10-16",
       "title": {
-        "pt": "Encontro 1: o que funciona, onde falha em silêncio e como verificar",
-        "en": "Meeting 1: what works, where it fails silently, and how to check it"
+        "pt": "Aula 1: o que funciona, onde falha em silêncio e como verificar",
+        "en": "Lesson 1: what works, where it fails silently, and how to check it"
       },
-      "slides": { "pt": "enc01.md", "en": "enc01-en.md" },
+      "slides": {
+        "pt": "enc01.md",
+        "en": "enc01-en.md"
+      },
       "downloads": [
-        { "dir": "demo-orca",  "label": { "pt": "Caso 1: DFT (ORCA)",      "en": "Case 1: DFT (ORCA)" } },
-        { "dir": "caso-2-vasp", "label": { "pt": "Caso 2: DFT (VASP)",     "en": "Case 2: DFT (VASP)" } },
-        { "dir": "caso-3-ml",  "label": { "pt": "Caso 3: Machine learning", "en": "Case 3: Machine learning" } },
-        { "dir": "gabaritos",  "label": { "pt": "Gabaritos",                "en": "Answer keys" } },
-        { "dir": "modelos",    "label": { "pt": "Modelos (AGENTS.md, checklist, skills)", "en": "Templates (AGENTS.md, checklist, skills)" } }
+        {
+          "dir": "demo-orca",
+          "label": {
+            "pt": "Caso 1: DFT (ORCA)",
+            "en": "Case 1: DFT (ORCA)"
+          }
+        },
+        {
+          "dir": "caso-2-vasp",
+          "label": {
+            "pt": "Caso 2: DFT (VASP)",
+            "en": "Case 2: DFT (VASP)"
+          }
+        },
+        {
+          "dir": "caso-3-ml",
+          "label": {
+            "pt": "Caso 3: Machine learning",
+            "en": "Case 3: Machine learning"
+          }
+        },
+        {
+          "dir": "gabaritos",
+          "label": {
+            "pt": "Gabaritos",
+            "en": "Answer keys"
+          }
+        },
+        {
+          "dir": "modelos",
+          "label": {
+            "pt": "Modelos (AGENTS.md, checklist, skills)",
+            "en": "Templates (AGENTS.md, checklist, skills)"
+          }
+        }
       ]
     }
   ]

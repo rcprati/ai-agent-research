@@ -1,17 +1,11 @@
-### 🇧🇷 Sobre o grupo
+### 🇧🇷 Sobre o material
 
-Estamos criando um grupo de trabalho sobre o uso de ferramentas de IA para código, como Claude e Google Antigravity, no nosso CMD. O objetivo é compartilhar o que funciona no dia a dia, onde essas ferramentas falham em silêncio e como validar o resultado contra resultados conhecidos.
+Material sobre o uso de ferramentas de IA para código, como Claude Code, Google Antigravity e OpenCode, na pesquisa: o que funciona no dia a dia, onde essas ferramentas falham em silêncio e como validar o resultado contra resultados conhecidos.
 
-Também vamos trocar prompts, configurações de projeto e skills reutilizáveis, para que as boas práticas não fiquem restritas a um único laboratório. Não é preciso experiência prévia. Estudantes de mestrado e doutorado, pós-docs e pesquisadores seniores são bem-vindos.
+Cada aula traz slides (em português e em inglês) e exemplos para baixar: dados de demonstração, modelos de arquivos de instruções (`AGENTS.md`) e uma lista de skills reutilizáveis. Não é preciso experiência prévia, e todos os dados dos exemplos são sintéticos.
 
-- **Primeiro encontro:** sexta-feira, 16 de outubro, às 14h
-- **Frequência:** quinzenal
+### 🇺🇸 About the material
 
-### 🇺🇸 About the group
+Material on using AI coding tools, such as Claude Code, Google Antigravity and OpenCode, in research: what works in daily workflows, where these tools fail silently, and how to validate their output against known results.
 
-We are launching a working group on the use of AI coding tools, such as Claude and Google Antigravity, in our CMD. The goal is to share what works in our daily workflows, where these tools fail silently, and how to validate their output against known results.
-
-We will also exchange prompts, project configurations, and reusable skills, so good practices do not stay within a single lab. No prior experience with AI tools is required. MSc and PhD students, postdocs, and senior researchers are all welcome.
-
-- **First meeting:** Friday, October 16, at 2:00 p.m.
-- **Frequency:** every two weeks
+Each lesson has slides (in Portuguese and English) and downloadable examples: demo data, templates for instruction files (`AGENTS.md`), and a list of reusable skills. No prior experience is required, and all example data are synthetic.

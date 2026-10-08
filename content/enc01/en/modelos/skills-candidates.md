@@ -1,12 +1,12 @@
-# Candidate skills for the group
+# Candidate skills
 
 Working list, organized by need. Names and descriptions come from the repositories' READMEs;
 **no skill has been tested or audited**. Before installing any of them, read the
 `SKILL.md` and the scripts (skills run code on your machine). Check each skill's license.
 
-Priority legend for Meeting 2: ★ = start here.
+Priority legend: ★ = start here.
 
-## 1. Verification and rigor (aligned with the group's theme)
+## 1. Verification and rigor (aligned with the silent-failures theme)
 
 From [K-Dense scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills):
 - ★ **Uncertainty & Units**: measurement uncertainty and unit checks (directly targets the "mixed units" failure)
@@ -65,7 +65,7 @@ Others:
 - **Nextflow**: reproducible workflows
 - **LaminDB**: data management
 - **Get Available Resources**: detects local CPU/GPU/memory
-- **Autoskill**: mines your work history to draft new skills (useful for the group's goal of building its own skills)
+- **Autoskill**: mines your work history to draft new skills (useful for building your own skills)
 - Lab: **protocols.io**, **Benchling**, **LabArchives**, **Opentrons**
 
 ## 7. Collections to explore (catalogs, not individual skills)
@@ -77,10 +77,10 @@ Others:
 - [Awesome-Agent-Skills-for-Empirical-Research](https://openskillindex.com/skills/brycewang-stanford-awesome-agent-skills-for-empirical-research-methodology-skill) (brycewang-stanford): 13 methodology skills
 - Star counts on aggregators differ widely; check the last commit date on GitHub
 
-## 8. Skills the group could write (gaps)
+## 8. Skills we could write (gaps)
 
 Nothing above directly covers the "silent failures" theme. Candidates for our own skills,
-good for Meeting 2 or 3:
+good for upcoming lessons:
 
 1. **validate-against-reference**: run the method on a case with a known answer and report the deviation
 2. **data-accounting**: every analysis ends by listing rows read, discarded, converted, and why
@@ -91,6 +91,6 @@ good for Meeting 2 or 3:
 
 ## To do
 
-- Audit 2 or 3 third-party skills (one per category) with the group's checklist
+- Audit 2 or 3 third-party skills (one per category) with the checklist
 - Check each skill's license before redistributing
-- Ask the group which domain areas are represented, to prune section 5
+- Check which domain areas matter, to prune section 5

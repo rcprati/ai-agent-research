@@ -1,12 +1,12 @@
-# Skills candidatos para o grupo
+# Skills candidatos
 
 Lista de trabalho, organizada por necessidade. Os nomes e as descrições vêm dos READMEs dos
 repositórios; **nenhum skill foi testado ou auditado**. Antes de instalar qualquer um, ler o
 `SKILL.md` e os scripts (skills executam código na máquina). Conferir licença de cada skill.
 
-Legenda de prioridade para o Encontro 2: ★ = começar por aqui.
+Legenda de prioridade: ★ = começar por aqui.
 
-## 1. Verificação e rigor (alinhado ao tema do grupo)
+## 1. Verificação e rigor (alinhado ao tema das falhas silenciosas)
 
 Do [K-Dense scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills):
 - ★ **Uncertainty & Units**: incerteza de medida e checagem de unidades (ataca direto a falha "unidades trocadas")
@@ -65,7 +65,7 @@ Outros:
 - **Nextflow**: fluxos de trabalho reprodutíveis
 - **LaminDB**: gestão de dados
 - **Get Available Resources**: detecta CPU/GPU/memória locais
-- **Autoskill**: minera o seu histórico de trabalho para rascunhar novos skills (útil para a meta do grupo de criar skills próprios)
+- **Autoskill**: minera o seu histórico de trabalho para rascunhar novos skills (útil para criar skills próprios)
 - Laboratório: **protocols.io**, **Benchling**, **LabArchives**, **Opentrons**
 
 ## 7. Coleções para explorar (catálogos, não skills individuais)
@@ -77,10 +77,10 @@ Outros:
 - [Awesome-Agent-Skills-for-Empirical-Research](https://openskillindex.com/skills/brycewang-stanford-awesome-agent-skills-for-empirical-research-methodology-skill) (brycewang-stanford): 13 skills de metodologia
 - Números de estrelas em agregadores divergem muito entre si; conferir no GitHub a data do último commit
 
-## 8. Skills que o grupo poderia escrever (lacunas)
+## 8. Skills que poderíamos escrever (lacunas)
 
 Nada acima cobre diretamente o tema "falhas silenciosas". Candidatos a skills próprios,
-bons para o Encontro 2 ou 3:
+bons para as próximas aulas:
 
 1. **validar-contra-referência**: rodar o método em um caso com resposta conhecida e reportar o desvio
 2. **contabilidade-de-dados**: toda análise termina listando linhas lidas, descartadas, convertidas e por quê
@@ -91,6 +91,6 @@ bons para o Encontro 2 ou 3:
 
 ## Pendências
 
-- Auditar 2 ou 3 skills de terceiros (um por categoria) com o checklist do grupo
+- Auditar 2 ou 3 skills de terceiros (um por categoria) com o checklist
 - Conferir a licença de cada skill antes de redistribuir
-- Perguntar ao grupo quais áreas de domínio estão representadas, para podar a seção 5
+- Conferir quais áreas de domínio interessam, para podar a seção 5

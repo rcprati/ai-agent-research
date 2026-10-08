@@ -1,9 +1,9 @@
 ---
 theme: seriph
-title: Agentes de IA para código na pesquisa — Encontro 1
+title: Agentes de IA para código na pesquisa — Aula 1
 info: |
-  Grupo de estudo sobre ferramentas de IA para código (Claude Code, Antigravity).
-  Encontro 1: o que são, onde falham em silêncio e como verificar.
+  Ferramentas de IA para código (Claude Code, Antigravity, OpenCode).
+  Aula 1: o que são, onde falham em silêncio e como verificar.
 class: text-center
 highlighter: shiki
 drawings:
@@ -17,20 +17,20 @@ fonts:
 
 # IA que escreve código<br>na sua pesquisa
 
-### Encontro 1 · O que funciona, onde falha em silêncio e como verificar
+### Aula 1 · O que funciona, onde falha em silêncio e como verificar
 
 <div class="pt-10 opacity-70 text-sm">
-Grupo de estudo · CMD · sexta, 16/10 · não é preciso saber programar
+Não é preciso saber programar
 </div>
 
 <!--
-[~0:00] Boas-vindas. Combinar o formato: quinzenal, aberto a todos os níveis, troca de prompts, configurações e skills.
+[~0:00] Boas-vindas. Perguntar quem já usou Claude Code, Antigravity ou OpenCode, e quem nunca usou.
 Perguntar quem já usou Claude Code, quem já usou Antigravity, quem nunca usou.
 -->
 
 ---
 
-# Roteiro de hoje (1h30)
+# Roteiro de hoje
 
 <div class="mt-6 text-lg leading-10">
 
@@ -39,7 +39,7 @@ Perguntar quem já usou Claude Code, quem já usou Antigravity, quem nunca usou.
 3. **Falhas silenciosas** em código de pesquisa
 4. A regra principal: **não confie, verifique**
 5. **Arquivo de instruções** do projeto e **skills**
-6. **Checklist** e combinados para o próximo encontro
+6. **Checklist** e combinados para a próxima aula
 
 </div>
 
@@ -75,21 +75,24 @@ Mais autonomia = mais produtividade <b>e</b> mais lugares para um erro passar de
 
 ---
 
-# Claude Code e Antigravity: a mesma ideia
+# Claude Code, Antigravity e OpenCode: a mesma ideia
 
-| | Claude Code | Google Antigravity |
-|---|---|---|
-| Onde roda | Terminal, app desktop, extensões de IDE | Editor próprio (IDE) e CLI |
-| Faz | Lê, edita, executa comandos | Idem, com painel de agentes |
-| Arquivo de instruções | `CLAUDE.md` | `AGENTS.md` / `GEMINI.md` |
-| Skills reutilizáveis | Sim | Sim |
+| | Claude Code | Google Antigravity | OpenCode |
+|---|---|---|---|
+| Onde roda | Terminal, app desktop, extensões de IDE | Editor próprio (IDE) e CLI | Terminal, app desktop, extensão de IDE |
+| Faz | Lê, edita, executa comandos | Idem, com painel de agentes | Idem |
+| Custo | Assinatura ou chave de API | Cota gratuita limitada | Ferramenta **gratuita e de código aberto**; o custo vem do modelo |
+| Arquivo de instruções | `CLAUDE.md` | `AGENTS.md` / `GEMINI.md` | `AGENTS.md` (o comando `/init` cria) |
+| Skills reutilizáveis | Sim | Sim | Sim |
 
-<div class="mt-6 text-sm opacity-70">
-Tudo o que veremos hoje vale para as duas. O que muda é onde clicar e o nome do arquivo de instruções.
+<div class="mt-4 text-sm opacity-70 leading-6">
+Tudo o que veremos hoje vale para as três. O que muda é onde clicar, o custo e o nome do arquivo de instruções.<br>
+O OpenCode usa vários provedores de modelo (com chave de API, e modelos gratuitos ou locais quando disponíveis: confira). Outra opção gratuita, de outra categoria:
+<a href="https://anythingllm.com/">AnythingLLM</a>, assistente privado local para conversar com seus documentos (não verificamos se edita arquivos de projeto).
 </div>
 
 <!--
-Verificar antes da reunião: nomes e caminhos do Antigravity mudam entre versões (IDE × CLI). Fontes de terceiros indicam que o IDE passou a ler AGENTS.md a partir da v1.20.x (março/2026); confirmar na documentação oficial.
+Verificar antes da aula: nomes e caminhos do Antigravity mudam entre versões (IDE × CLI). Fontes de terceiros indicam que o IDE passou a ler AGENTS.md a partir da v1.20.x (março/2026); confirmar na documentação oficial.
 -->
 
 ---
@@ -111,7 +114,7 @@ Um pedido comum: alguém passa uma planilha-resumo e pede a análise.<br>
 
 <!--
 [~0:20] Pedir 2 ou 3 palpites à plateia antes de mostrar a resposta. Dados e gabarito: materiais/demo e materiais/gabaritos/00-demo.md. Roteiro e variações: materiais/roteiro-demo.md.
-Atenção: o modelo foi o Gemini 3.1 Pro (low) no Antigravity; confirmar antes da reunião.
+Atenção: o modelo foi o Gemini 3.1 Pro (low) no Antigravity; confirmar antes da aula.
 -->
 
 ---
@@ -339,7 +342,7 @@ Em todos os casos o código <b>roda</b> e entrega um número com cara de respost
 </div>
 
 <!--
-[~0:35] Pedir ao grupo exemplos próprios. Anotar para o Encontro 2.
+[~0:35] Pedir exemplos próprios à turma. Anotar para a próxima aula.
 -->
 
 ---
@@ -488,7 +491,7 @@ Resultados completos e notas por execução: testes-agents/RESULTADOS.md. O can�
 ### A saída
 - **Empacotar** cada tarefa uma vez, num arquivo à parte
 - **Reaproveitar** o que outras pessoas já escreveram
-- **Compartilhar** o que funciona no seu grupo (a meta deste grupo de estudo)
+- **Compartilhar** o que funciona no seu laboratório
 - Carregar a receita **só quando a tarefa aparece**
 
 </div>
@@ -503,7 +506,7 @@ Mas com cuidado: skill de terceiros executa código na sua máquina e a qualidad
 </div>
 
 <!--
-Transição entre "arquivo de instruções" e "skill". Reforçar: AGENTS.md = regras do SEU projeto (sempre valem); skill = receita de UMA tarefa, reutilizável. Adiantar que existem coleções públicas (lista em skills-candidatos.md) e que o grupo vai construir as suas.
+Transição entre "arquivo de instruções" e "skill". Reforçar: AGENTS.md = regras do SEU projeto (sempre valem); skill = receita de UMA tarefa, reutilizável. Adiantar que existem coleções públicas (lista em skills-candidatos.md) e que vamos construir as nossas.
 -->
 
 ---
@@ -547,7 +550,7 @@ Liste as unidades de cada coluna, procure -999/NA/9999 e reporte antes de calcul
 
 <!--
 Ponto: um skill é só um arquivo de texto (mais, às vezes, um script). Não é um programa instalado nem um plugin mágico.
-Claude Code lê skills de .claude/skills/<nome>/SKILL.md (projeto) ou ~/.claude/skills/ (pessoal). O formato SKILL.md é um padrão aberto, e o repositório K-Dense afirma compatibilidade com Antigravity; confirmar o caminho de instalação no Antigravity antes da reunião.
+Claude Code lê skills de .claude/skills/<nome>/SKILL.md (projeto) ou ~/.claude/skills/ (pessoal). O formato SKILL.md é um padrão aberto, e o repositório K-Dense afirma compatibilidade com Antigravity; confirmar o caminho de instalação no Antigravity antes da aula. OpenCode: `.opencode/skills/<nome>/SKILL.md` ou `~/.config/opencode/skills/` (fonte de terceiros; confirmar em opencode.ai/docs/skills).
 Aviso: skills de terceiros executam código na sua máquina; ler antes de instalar.
 -->
 
@@ -593,7 +596,7 @@ Lista completa e comentada: <code>skills-candidatos.md</code>
 </div>
 
 <!--
-Os nomes vêm dos READMEs dos repositórios; nada foi instalado nem rodado. Ideia: o grupo escolher 2 ou 3 para testar com os casos do encontro. A lista de skills do K-Dense pode estar incompleta (a página era longa). Confirmar as licenças antes de redistribuir qualquer coisa.
+Os nomes vêm dos READMEs dos repositórios; nada foi instalado nem rodado. Ideia: escolher 2 ou 3 para testar com os casos da aula. A lista de skills do K-Dense pode estar incompleta (a página era longa). Confirmar as licenças antes de redistribuir qualquer coisa.
 -->
 
 ---
@@ -616,7 +619,7 @@ Os nomes vêm dos READMEs dos repositórios; nada foi instalado nem rodado. Idei
 
 ---
 
-# Para o próximo encontro (a cada 15 dias)
+# Para a próxima aula
 
 <div class="mt-4 text-lg leading-9">
 
@@ -624,7 +627,7 @@ Os nomes vêm dos READMEs dos repositórios; nada foi instalado nem rodado. Idei
 - **Trazer:** um caso de falha silenciosa (ou um acerto surpreendente)
 - **Analisar um skill** da lista: **não precisa instalar**; basta abrir o `SKILL.md` e olhar o conteúdo e a estrutura (o que ele pede, o que ele faz, o que faltou)
 - **Compartilhar:** um prompt, um `AGENTS.md` ou um skill que funcionou
-- **Repositório do grupo:** para guardar prompts, configurações e skills
+- **Repositório compartilhado:** para guardar prompts, configurações e skills
 
 </div>
 

@@ -88,7 +88,7 @@ def main() -> None:
             if btns:
                 rows.append(f"<div class='row'><span class='lang'>{lang_name}</span>{' '.join(btns)}</div>")
         cards.append(
-            f"<div class='meeting'><div class='date'>{m['date']}</div>"
+            f"<div class='meeting'>"
             f"<div class='title'>{html.escape(m['title']['pt'])}<br><span class='note'>{html.escape(m['title']['en'])}</span></div>"
             + "".join(rows) + "</div>"
         )
@@ -103,7 +103,7 @@ def main() -> None:
 <body>
 <h1>{html.escape(cfg['site_title']['pt'])}<br><span class='note' style='font-size:.55em'>{html.escape(cfg['site_title']['en'])}</span></h1>
 {readme_html()}
-<h2>Encontros / Meetings</h2>
+<h2>Aulas / Lessons</h2>
 {''.join(cards)}
 <div class="footer">Atualizado via GitHub Actions · Material adaptado em parte de
 <a href="https://github.com/walkinglabs/learn-harness-engineering">Learn Harness Engineering</a> (MIT) ·

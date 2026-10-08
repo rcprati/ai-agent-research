@@ -1,9 +1,9 @@
 ---
 theme: seriph
-title: AI Agents for Code in Research — Meeting 1
+title: AI Agents for Code in Research — Lesson 1
 info: |
-  Study group on AI coding tools (Claude Code, Antigravity).
-  Meeting 1: what they are, where they fail silently, and how to check them.
+  AI coding tools (Claude Code, Antigravity, OpenCode).
+  Lesson 1: what they are, where they fail silently, and how to check them.
 class: text-center
 highlighter: shiki
 drawings:
@@ -17,20 +17,19 @@ fonts:
 
 # AI that writes code<br>for your research
 
-### Meeting 1 · What works, where it fails silently, and how to check it
+### Lesson 1 · What works, where it fails silently, and how to check it
 
 <div class="pt-10 opacity-70 text-sm">
-Study group · CMD · Friday, Oct 16 · no programming knowledge needed
+No programming knowledge needed
 </div>
 
 <!--
-[~0:00] Welcome. Agree on the format: every two weeks, open to all levels, sharing prompts, configurations and skills.
-Ask who has used Claude Code, who has used Antigravity, and who has never used either.
+[~0:00] Welcome. Ask who has used Claude Code, Antigravity or OpenCode, and who has never used any of them.
 -->
 
 ---
 
-# Today's plan (1h30)
+# Today's plan
 
 <div class="mt-6 text-lg leading-10">
 
@@ -39,7 +38,7 @@ Ask who has used Claude Code, who has used Antigravity, and who has never used e
 3. **Silent failures** in research code
 4. The main rule: **don't trust, verify**
 5. The project's **instructions file** and **skills**
-6. **Checklist** and agreements for the next meeting
+6. **Checklist** and agreements for the next lesson
 
 </div>
 
@@ -75,21 +74,24 @@ More autonomy = more productivity <b>and</b> more places for an error to slip by
 
 ---
 
-# Claude Code and Antigravity: the same idea
+# Claude Code, Antigravity and OpenCode: the same idea
 
-| | Claude Code | Google Antigravity |
-|---|---|---|
-| Where it runs | Terminal, desktop app, IDE extensions | Its own editor (IDE) and CLI |
-| What it does | Reads, edits, runs commands | Same, with an agent panel |
-| Instructions file | `CLAUDE.md` | `AGENTS.md` / `GEMINI.md` |
-| Reusable skills | Yes | Yes |
+| | Claude Code | Google Antigravity | OpenCode |
+|---|---|---|---|
+| Where it runs | Terminal, desktop app, IDE extensions | Its own editor (IDE) and CLI | Terminal, desktop app, IDE extension |
+| What it does | Reads, edits, runs commands | Same, with an agent panel | Same |
+| Cost | Subscription or API key | Limited free quota | **Free, open-source** tool; the cost comes from the model |
+| Instructions file | `CLAUDE.md` | `AGENTS.md` / `GEMINI.md` | `AGENTS.md` (the `/init` command creates it) |
+| Reusable skills | Yes | Yes | Yes |
 
-<div class="mt-6 text-sm opacity-70">
-Everything we cover today applies to both. What changes is where to click and the name of the instructions file.
+<div class="mt-4 text-sm opacity-70 leading-6">
+Everything we cover today applies to all three. What changes is where to click, the cost, and the name of the instructions file.<br>
+OpenCode works with many model providers (with an API key, and free or local models when available: check). Another free option, from a different category:
+<a href="https://anythingllm.com/">AnythingLLM</a>, a private local assistant for chatting with your documents (we did not check whether it edits project files).
 </div>
 
 <!--
-Check before the meeting: Antigravity names and paths change between versions (IDE × CLI). Third-party sources indicate the IDE started reading AGENTS.md from v1.20.x (March 2026); confirm in the official documentation.
+Check before the lesson: Antigravity names and paths change between versions (IDE × CLI). Third-party sources indicate the IDE started reading AGENTS.md from v1.20.x (March 2026); confirm in the official documentation.
 -->
 
 ---
@@ -112,7 +114,7 @@ A common request: someone hands over a summary spreadsheet and asks for the anal
 <!--
 [~0:20] Ask the audience for 2 or 3 guesses before showing the answer. Data and answer key: materials/demo and materials/answer-keys/00-demo.md. Script and variations: materials/demo-script.md.
 Note: the original run, including the prompt and the agent's output, was in Portuguese; it is translated into English on these slides.
-Note: the model was Gemini 3.1 Pro (low) in Antigravity; confirm before the meeting.
+Note: the model was Gemini 3.1 Pro (low) in Antigravity; confirm before the lesson.
 -->
 
 ---
@@ -340,7 +342,7 @@ In every case the code <b>runs</b> and delivers a number that looks like an answ
 </div>
 
 <!--
-[~0:35] Ask the group for their own examples. Write them down for Meeting 2.
+[~0:35] Ask the class for their own examples. Write them down for the next lesson.
 -->
 
 ---
@@ -489,7 +491,7 @@ Full results and per-run notes: testes-agents/RESULTADOS.md. The "Instruções l
 ### The way out
 - **Package** each task once, in a separate file
 - **Reuse** what other people have already written
-- **Share** what works in your group (the goal of this study group)
+- **Share** what works in your lab
 - Load the recipe **only when the task comes up**
 
 </div>
@@ -504,7 +506,7 @@ But be careful: third-party skills run code on your machine and quality varies. 
 </div>
 
 <!--
-Transition between "instructions file" and "skill". Stress: AGENTS.md = rules for YOUR project (always apply); skill = a recipe for ONE task, reusable. Mention up front that public collections exist (list in skills-candidates.md) and that the group will build its own.
+Transition between "instructions file" and "skill". Stress: AGENTS.md = rules for YOUR project (always apply); skill = a recipe for ONE task, reusable. Mention up front that public collections exist (list in skills-candidates.md) and that we will build our own.
 -->
 
 ---
@@ -548,7 +550,7 @@ List the units of each column, look for -999/NA/9999 and report them before calc
 
 <!--
 Point: a skill is just a text file (plus, sometimes, a script). It is not an installed program or a magic plugin.
-Claude Code reads skills from .claude/skills/<name>/SKILL.md (project) or ~/.claude/skills/ (personal). The SKILL.md format is an open standard, and the K-Dense repository claims compatibility with Antigravity; confirm the installation path in Antigravity before the meeting.
+Claude Code reads skills from .claude/skills/<name>/SKILL.md (project) or ~/.claude/skills/ (personal). The SKILL.md format is an open standard, and the K-Dense repository claims compatibility with Antigravity; confirm the installation path in Antigravity before the lesson. OpenCode: `.opencode/skills/<name>/SKILL.md` or `~/.config/opencode/skills/` (third-party source; confirm at opencode.ai/docs/skills).
 Warning: third-party skills run code on your machine; read before installing.
 -->
 
@@ -594,7 +596,7 @@ Full annotated list: <code>skills-candidates.md</code>
 </div>
 
 <!--
-The names come from the repositories' READMEs; nothing was installed or run. Idea: the group picks 2 or 3 to test with the meeting's cases. The K-Dense skill list may be incomplete (the page was long). Check the licenses before redistributing anything.
+The names come from the repositories' READMEs; nothing was installed or run. Idea: pick 2 or 3 to test with the lesson's cases. The K-Dense skill list may be incomplete (the page was long). Check the licenses before redistributing anything.
 -->
 
 ---
@@ -617,7 +619,7 @@ The names come from the repositories' READMEs; nothing was installed or run. Ide
 
 ---
 
-# For the next meeting (every two weeks)
+# For the next lesson
 
 <div class="mt-4 text-lg leading-9">
 
@@ -625,7 +627,7 @@ The names come from the repositories' READMEs; nothing was installed or run. Ide
 - **Bring:** a case of silent failure (or a surprising success)
 - **Analyze one skill** from the list: **no need to install it**; just open the `SKILL.md` and look at the content and structure (what it asks for, what it does, what is missing)
 - **Share:** a prompt, an `AGENTS.md` or a skill that worked
-- **Group repository:** to keep prompts, configurations and skills
+- **Shared repository:** to keep prompts, configurations and skills
 
 </div>
 
