@@ -87,8 +87,7 @@ Mais autonomia = mais produtividade <b>e</b> mais lugares para um erro passar de
 
 <div class="mt-4 text-sm opacity-70 leading-6">
 Tudo o que veremos hoje vale para as três. O que muda é onde clicar, o custo e o nome do arquivo de instruções.<br>
-O OpenCode usa vários provedores de modelo (com chave de API, e modelos gratuitos ou locais quando disponíveis: confira). Outra opção gratuita, de outra categoria:
-<a href="https://anythingllm.com/">AnythingLLM</a>, assistente privado local para conversar com seus documentos (não verificamos se edita arquivos de projeto).
+O OpenCode usa vários provedores de modelo (com chave de API, e modelos gratuitos ou locais quando disponíveis: confira).
 </div>
 
 <!--

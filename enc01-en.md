@@ -86,8 +86,7 @@ More autonomy = more productivity <b>and</b> more places for an error to slip by
 
 <div class="mt-4 text-sm opacity-70 leading-6">
 Everything we cover today applies to all three. What changes is where to click, the cost, and the name of the instructions file.<br>
-OpenCode works with many model providers (with an API key, and free or local models when available: check). Another free option, from a different category:
-<a href="https://anythingllm.com/">AnythingLLM</a>, a private local assistant for chatting with your documents (we did not check whether it edits project files).
+OpenCode works with many model providers (with an API key, and free or local models when available: check).
 </div>
 
 <!--
