@@ -51,6 +51,40 @@
           }
         }
       ]
+    },
+    {
+      "id": "enc02",
+      "title": {
+        "pt": "Aula 2: skills na prática (ler, construir e testar)",
+        "en": "Lesson 2: skills in practice (read, build, and test)"
+      },
+      "slides": {
+        "pt": "enc02.md",
+        "en": "enc02-en.md"
+      },
+      "downloads": [
+        {
+          "dir": "verificar-entradas",
+          "label": {
+            "pt": "Skill verificar-entradas",
+            "en": "Skill verificar-entradas"
+          }
+        },
+        {
+          "dir": "check-inputs",
+          "label": {
+            "pt": "Skill check-inputs (inglês)",
+            "en": "Skill check-inputs"
+          }
+        },
+        {
+          "dir": "leitura-skills",
+          "label": {
+            "pt": "Leitura de skills do K-Dense",
+            "en": "Reading of K-Dense skills"
+          }
+        }
+      ]
     }
   ]
 }
