@@ -127,6 +127,47 @@
           }
         }
       ]
+    },
+    {
+      "id": "enc03",
+      "title": {
+        "pt": "Aula 3: pedir bem e revisar (pedido, contexto e revisor independente)",
+        "en": "Lesson 3: asking well and reviewing (request, context, and independent reviewer)"
+      },
+      "slides": {
+        "pt": "enc03.md",
+        "en": "enc03-en.md"
+      },
+      "downloads": [
+        {
+          "dir": "revisar-resultado",
+          "label": {
+            "pt": "Skill revisar-resultado",
+            "en": "Skill revisar-resultado"
+          }
+        },
+        {
+          "dir": "review-result",
+          "label": {
+            "pt": "Skill review-result (inglês)",
+            "en": "Skill review-result"
+          }
+        },
+        {
+          "dir": "revisao-casos",
+          "label": {
+            "pt": "Casos para praticar a revisão",
+            "en": "Review cases"
+          }
+        },
+        {
+          "dir": "review-cases",
+          "label": {
+            "pt": "Review cases",
+            "en": "Review cases (English readme)"
+          }
+        }
+      ]
     }
   ]
 }

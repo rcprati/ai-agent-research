@@ -1,0 +1,14 @@
+# EXCERTO SINTETICO NO ESTILO VASP. Dados ficticios. Nao e saida real do VASP.
+ SYSTEM = CO gas
+ ENCUT  =  400.0 eV
+ ISPIN  =  1
+ NSW    =  50
+ EDIFFG = -0.02
+
+----------------------------------------  ionic step 1  ----------------------------------------
+  free  energy   TOTEN  =      -14.51200000 eV
+  energy  without entropy=     -14.51080000  energy(sigma->0) =     -14.51140000
+
+ reached required accuracy - stopping structural energy minimisation
+
+ General timing and accounting informations for this job:

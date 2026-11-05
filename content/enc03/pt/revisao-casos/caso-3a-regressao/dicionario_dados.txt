@@ -1,0 +1,11 @@
+Dicionário de dados (compilado por um colega)
+
+dados_regressao.csv
+  d1..d5                  descritores calculados para cada estrutura
+  energia                 alvo: energia calculada nesta rodada
+  energia_calc_anterior   energia da rodada anterior, obtida a partir do próprio alvo
+                          (copiada antes da correção); NÃO é um descritor, só ficou no arquivo
+
+dados_clustering.csv
+  raio_A                  raio em angstrom (valores na casa de 1)
+  energia_meV             energia em milielétron-volt (valores na casa de 1000)

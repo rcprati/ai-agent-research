@@ -5,14 +5,6 @@ description: Use antes de calcular um resultado a partir de arquivos de dados ou
 
 # Verificar entradas antes de calcular
 
-Rode a varredura primeiro e leia o resultado antes de abrir qualquer dado:
-
-```bash
-python3 scripts/scan.py <pasta>
-```
-
-A varredura só **sinaliza** pontos a conferir. Ela não prova que algo está certo nem errado.
-
 ## Passos
 
 1. **Documentação.** Leia todo README e dicionário de dados da pasta antes de usar os dados.

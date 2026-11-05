@@ -1,0 +1,4 @@
+sistema,arquivo,energia_eV
+slab,slab.OUTCAR,-345.123
+CO_gas,CO_gas_ecut400.OUTCAR,-14.512
+CO_slab,COslab_run1.OUTCAR,-361.15

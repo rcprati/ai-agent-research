@@ -5,14 +5,6 @@ description: Use before calculating a result from data files or calculation outp
 
 # Check inputs before calculating
 
-Run the scan first and read its output before opening any data:
-
-```bash
-python3 scripts/scan.py <folder> --lang en
-```
-
-The scan only **flags** points to check. It does not prove that anything is right or wrong.
-
 ## Steps
 
 1. **Documentation.** Read every README and data dictionary in the folder before using the data.
