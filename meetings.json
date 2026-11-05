@@ -83,6 +83,48 @@
             "pt": "Leitura de skills do K-Dense",
             "en": "Reading of K-Dense skills"
           }
+        },
+        {
+          "dir": "figura-publicacao",
+          "label": {
+            "pt": "Skill figura-publicacao",
+            "en": "Skill figura-publicacao"
+          }
+        },
+        {
+          "dir": "publication-figure",
+          "label": {
+            "pt": "Skill publication-figure (inglês)",
+            "en": "Skill publication-figure"
+          }
+        },
+        {
+          "dir": "caso-figura",
+          "label": {
+            "pt": "Caso da figura (dados)",
+            "en": "Figure case (data)"
+          }
+        },
+        {
+          "dir": "case-figure",
+          "label": {
+            "pt": "Figure case (data)",
+            "en": "Figure case (data)"
+          }
+        },
+        {
+          "dir": "exemplo-figura",
+          "label": {
+            "pt": "Exemplo: figura sem e com o skill",
+            "en": "Example: figure"
+          }
+        },
+        {
+          "dir": "example-figure",
+          "label": {
+            "pt": "Example: figure",
+            "en": "Example: figure without and with the skill"
+          }
         }
       ]
     }

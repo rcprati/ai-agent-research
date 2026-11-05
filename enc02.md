@@ -89,12 +89,19 @@ O nome da pasta deve ser igual ao `name`.
 </div>
 </div>
 
-<div class="mt-4 text-sm opacity-70">
-Onde instalar: Claude Code, <code>.claude/skills/&lt;nome&gt;/</code> · OpenCode, <code>.opencode/skills/&lt;nome&gt;/</code> (fonte de terceiros) · Antigravity: confirmar na documentação.
+<div class="mt-2 text-xs leading-5">
+
+**Onde instalar** (projeto · global; cada skill em uma subpasta `<nome>/`)
+- **Claude Code:** `.claude/skills/` · `~/.claude/skills/`
+- **Antigravity:** `.agents/skills/` · `~/.gemini/config/skills/` (app e IDE) ou `~/.gemini/antigravity-cli/skills/` (CLI)
+- **OpenCode:** `.opencode/skills/` · `~/.config/opencode/skills/` (nativo); também lê `.claude/skills/` e `.agents/skills/`, no projeto e no global
+
+<span class="opacity-70">Dica: um skill em `.agents/skills/` serve ao Antigravity **e** ao OpenCode.</span>
+
 </div>
 
 <!--
-Mostrar a pasta real em materiais/ (zip "Skill verificar-entradas"). Confirmar os caminhos de instalação do Antigravity e do OpenCode antes da aula.
+Mostrar a pasta real em materiais/ (zip "Skill verificar-entradas"). Caminhos do Antigravity e do OpenCode informados por quem vai apresentar (OpenCode: seis locais, nativo + compatíveis com Claude Code e com o padrão Agent Skills). Conferir nas versões instaladas antes da aula.
 -->
 
 ---
@@ -271,6 +278,71 @@ Ele só <b>sinaliza</b>. Quem decide o que usar continua sendo o agente (e você
 
 ---
 
+# Outro skill: figura para publicação
+
+<div class="grid grid-cols-2 gap-5 mt-1 text-sm leading-6">
+<div>
+
+O **mesmo pedido** nos dois casos:
+
+> Crie um script em python que faça uma figura da energia versus o parâmetro de rede, com os dois funcionais, a partir de `dados_eos.csv`, com os rótulos em inglês
+
+**O skill manda:**
+- formato **vetorial** (PDF), PNG só de prévia
+- **sem título** dentro do gráfico (vai na legenda do artigo)
+- fontes **≥ 8–9 pt no tamanho final**
+- rótulos com **símbolo e unidade**
+- **cor e marcador** (seguro para daltônicos)
+- script **reprodutível**, lendo os dados do arquivo
+
+</div>
+<div>
+
+```text
+figura-publicacao/
+├── SKILL.md
+└── scripts/
+    └── pubstyle.mplstyle
+```
+
+<div class="text-xs opacity-70 leading-5">
+O arquivo <code>pubstyle.mplstyle</code> fixa tamanho de uma coluna (8,6 cm), fontes, paleta e PDF com fonte incorporada. O agente só precisa carregá-lo.
+</div>
+
+</div>
+</div>
+
+---
+
+# A mesma figura, sem e com o skill
+
+<div class="grid grid-cols-2 gap-6 mt-1">
+<div class="text-center">
+
+<img src="/fig-sem-skill.png" style="height:230px;margin:0 auto" />
+
+<div class="text-xs leading-5 mt-1"><b>Sem skill</b> · PNG 1800 × 1350 px · fonte padrão 10 pt (≈ 5,7 pt numa coluna) · grade e legenda com moldura</div>
+
+</div>
+<div class="text-center">
+
+<img src="/fig-com-skill.png" style="height:230px;margin:0 auto" />
+
+<div class="text-xs leading-5 mt-1"><b>Com skill</b> · PDF vetorial · Arial incorporada · 9–10 pt · 8,4 × 6,3 cm · sem grade nem moldura</div>
+
+</div>
+</div>
+
+<div class="mt-2 text-xs opacity-70 leading-5">
+Ambas à mesma escala (largura de uma coluna). Duas execuções do Claude, com o mesmo pedido; a sem skill não abriu a imagem para conferir. Neste caso o agente sem skill não pôs título no gráfico, mas as outras regras não vieram sozinhas.
+</div>
+
+<!--
+Figuras reais geradas por duas execuções isoladas do Claude (subagentes) a partir de dados_eos.csv (dados sintéticos), com o pedido de rótulos em inglês nas duas. Numa primeira rodada (rótulos em português) o agente sem skill tinha posto título no gráfico; nesta, não. O script e as figuras estão no zip "Exemplo de figura". No Antigravity/OpenCode, repetir o teste ao vivo: mesmo pedido, sem e com o skill instalado.
+-->
+
+---
+
 # Testando: sem skill × com skill
 
 <div class="mt-1 text-sm opacity-70">Mesmos pedidos restritos da Aula 1 · sessão nova, pasta só com os dados · o skill instalado na ferramenta</div>
@@ -283,6 +355,7 @@ Ele só <b>sinaliza</b>. Quem decide o que usar continua sendo o agente (e você
 | 2 · VASP | −1,515 ✗ | |
 | 3A · regressão | R² 0,9982 ✗ | |
 | 3B · clustering | 88/70/42 ✗ | |
+| 4 · Figura | PNG, fonte pequena | |
 
 </div>
 

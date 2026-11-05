@@ -553,7 +553,7 @@ List the units of each column, look for -999/NA/9999 and report them before calc
 
 <!--
 Point: a skill is just a text file (plus, sometimes, a script). It is not an installed program or a magic plugin.
-Claude Code reads skills from .claude/skills/<name>/SKILL.md (project) or ~/.claude/skills/ (personal). The SKILL.md format is an open standard, and the K-Dense repository claims compatibility with Antigravity; confirm the installation path in Antigravity before the lesson. OpenCode: `.opencode/skills/<name>/SKILL.md` or `~/.config/opencode/skills/` (third-party source; confirm at opencode.ai/docs/skills).
+Claude Code reads skills from .claude/skills/<name>/SKILL.md (project) or ~/.claude/skills/ (personal). The SKILL.md format is an open standard, and the K-Dense repository claims compatibility with Antigravity; In Antigravity: `.agents/skills/<name>/` (project) or `~/.gemini/config/skills/` (global, app/IDE). OpenCode: `.opencode/skills/<name>/` (native) and also `.claude/skills/` and `.agents/skills/`, in the project and globally.
 Warning: third-party skills run code on your machine; read before installing.
 -->
 

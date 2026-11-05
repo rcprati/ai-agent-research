@@ -1,0 +1,28 @@
+# Estilo matplotlib para figuras de artigo (uma coluna, ~8,6 cm).
+# Uso: plt.style.use("scripts/pubstyle.mplstyle")
+figure.figsize: 3.4, 2.6
+font.family: sans-serif
+font.sans-serif: Arial, Helvetica, DejaVu Sans
+font.size: 9
+axes.labelsize: 10
+axes.titlesize: 10
+xtick.labelsize: 9
+ytick.labelsize: 9
+legend.fontsize: 9
+axes.linewidth: 0.8
+axes.spines.top: False
+axes.spines.right: False
+xtick.direction: out
+ytick.direction: out
+xtick.major.width: 0.8
+ytick.major.width: 0.8
+lines.linewidth: 1.5
+lines.markersize: 5
+legend.frameon: False
+axes.grid: False
+axes.prop_cycle: cycler('color', ['0072B2', 'D55E00', '009E73', 'CC79A7', 'E69F00', '56B4E9', '000000'])
+pdf.fonttype: 42
+ps.fonttype: 42
+savefig.bbox: tight
+savefig.pad_inches: 0.02
+savefig.dpi: 600
