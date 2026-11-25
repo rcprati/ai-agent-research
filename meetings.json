@@ -166,6 +166,20 @@
             "pt": "Review cases",
             "en": "Review cases (English readme)"
           }
+        },
+        {
+          "dir": "gabarito-eos",
+          "label": {
+            "pt": "Gabarito do caso 4 (EOS)",
+            "en": "Case 4 answer key (EOS, Portuguese)"
+          }
+        },
+        {
+          "dir": "eos-answer-key",
+          "label": {
+            "pt": "Case 4 answer key (inglês)",
+            "en": "Case 4 answer key (EOS)"
+          }
         }
       ]
     }

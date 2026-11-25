@@ -1,0 +1,15 @@
+elemento,a_A,V_celula_A3,E_celula_eV,arquivo
+Cu,3.55521,44.9361,-14.794339,calculos/Cu_094.out
+Cu,3.58025,45.8922,-14.843463,calculos/Cu_096.out
+Cu,3.60494,46.8483,-14.871226,calculos/Cu_098.out
+Cu,3.62930,47.8044,-14.880000,calculos/Cu_100.out
+Cu,3.65333,48.7605,-14.871886,calculos/Cu_102.out
+Cu,3.67706,49.7166,-14.848751,calculos/Cu_104.out
+Cu,3.70048,50.6727,-14.812258,calculos/Cu_106.out
+Al,3.95711,61.9633,-14.895139,calculos/Al_094.out
+Al,3.98498,63.2817,-14.932278,calculos/Al_096.out
+Al,4.01246,64.6000,-14.953330,calculos/Al_098.out
+Al,4.03957,65.9184,-14.960000,calculos/Al_100.out
+Al,4.06633,67.2368,-14.893807,calculos/Al_102.out
+Al,4.09273,68.5551,-14.936106,calculos/Al_104.out
+Al,4.11880,69.8735,-14.908107,calculos/Al_106.out

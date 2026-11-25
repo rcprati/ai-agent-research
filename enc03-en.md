@@ -37,8 +37,9 @@ Welcome. Ask about the homework: who tested their own skill? Who brought a case 
 2. **Anatomy of a good request**
 3. **Context:** what the agent sees
 4. **The independent reviewer**
-5. **Hands-on:** in pairs
-6. Agreements for the next lesson
+5. **A case:** when the reviewer is wrong too
+6. **Hands-on:** in pairs
+7. Agreements for the next lesson
 
 </div>
 
@@ -138,7 +139,7 @@ The instructions file (<code>AGENTS.md</code>) holds what applies to <b>every</b
 <div class="mt-3 text-sm leading-6">
 
 - The rewritten request is **longer**, and that is the point: time spent writing is time not spent discovering the error later
-- We did not test its effect on today's agents; it is a **hypothesis**, and today's exercise tests it with your case
+- We did not test its effect in the Lesson 1 cases; it is a **hypothesis**. Case 4 (ahead) brings a first test, and today's exercise tests it with your case
 
 </div>
 
@@ -245,7 +246,7 @@ The idea comes from lesson 9 of the Learn Harness Engineering course (separating
 **Steps**
 1. Understand the **request** and the reported result
 2. **Read the data and documentation** before the author's reasoning
-3. **Redo it** by an independent path, then run the author's script
+3. **Redo it** with an implementation **different** from the author's, compare with a reference, then run the author's script
 4. Look for **silent failures:** files, parameters, units, missing values, leakage, scale, plausibility
 5. **Do not fix** the author's work: point out and justify
 
@@ -290,14 +291,147 @@ Reviewers: Claude (8 isolated runs). Authors: Antigravity. Each author's answer 
 
 ---
 
+# Case 4: equation of state of Cu and Al
+
+<div class="grid grid-cols-2 gap-5 mt-1 text-sm leading-6">
+<div>
+
+**The request (restricted)**
+
+> Write a python script that fits a Birch-Murnaghan equation of state to the data in `resumo_eos.csv` and reports V0, B0, and a0 for Cu and Al
+
+**The data**
+- 7 volumes per element, in a `resumo_eos.csv` and one `.out` per point
+- The `.out` for Al at 102% of the volume says **"SCF DID NOT CONVERGE"**; the summary **does not** carry that warning
+
+</div>
+<div class="p-3 rounded-xl bg-slate-100 text-xs leading-5">
+
+**Where the numbers come from**
+
+The parameters (V0, B0, B1) for Cu and Al are those of the **Delta test** (WIEN2k reference): Lejaeghere, Van Speybroeck, Van Oost, and Cottenier, *Crit. Rev. Solid State Mater. Sci.* (2014).
+
+<div class="mt-2">
+<b>We reconstructed the energies</b> with Birch–Murnaghan from those parameters. <b>They are not DFT output</b>, and the Al point was altered on purpose.
+</div>
+
+<div class="mt-2">
+Right answer: Cu <b>141.3 GPa</b>; Al <b>78.08 GPa</b> (without the unconverged point).
+</div>
+
+</div>
+</div>
+
+---
+
+# The same request, three authors
+
+<div class="text-sm">
+
+| Author (1 run per cell) | Restricted request | Rewritten request |
+|---|---|---|
+| Claude (isolated agent) | correct | correct |
+| Claude Haiku 5.5 | correct | correct |
+| OpenWork · gpt-6-luna | **wrong** | correct |
+
+</div>
+
+<div class="mt-2 text-sm leading-6">
+
+**What OpenWork got wrong with the restricted request**
+- Kept the **unconverged** Al point (V0 16.424 instead of 16.480 Å³)
+- **Wrote the formula wrong** (`6 − 4x` where it should be `6 − 4y`): Cu B0 **47** GPa instead of 141, Al 18 instead of 78
+- Fixed B1 = 4 (it said so, but nobody asked)
+
+</div>
+
+<div class="mt-2 text-xs opacity-70 leading-5">
+The formula error does not prove the restricted request caused the failure: it may have been luck. The rewritten request changed the <b>checking of the points</b>; one run cannot separate the effects.
+</div>
+
+---
+
+# The author, when asked, defends the error
+
+<div class="mt-2 text-base leading-8">
+
+1. We asked it to **explain the formula**: it repeated it, wrong, as the standard form, citing Birch (1947)
+2. We asked whether the Cu B0 was **consistent with the known value** (~140 GPa): it recognized the problem ("almost a factor of 3")
+3. But it blamed **the data** ("shallow curve", few points), not the formula
+
+</div>
+
+<div class="mt-3 p-3 rounded-xl bg-amber-50 border border-amber-200 text-sm text-center">
+Asking whoever did it to <b>check their own work</b> reproduces the reasoning. The data were fine: with the corrected formula (and B1 = 4), Cu gives 141.6 GPa.
+</div>
+
+---
+
+# And the reviewer? Found the point, missed the formula
+
+<div class="text-sm">
+
+| Reviewer (Claude, 1 run) | `Al_102` | Formula | Its own "refit" |
+|---|---|---|---|
+| `review-result` skill (version 1) | found | **no** | Cu 47.1 · Al 26.0 |
+| no skill ("review critically") | found | **no** | Al 26.1 |
+
+</div>
+
+<div class="mt-2 text-base leading-7">
+
+- Both **reused the author's model**: their values are the right ones **÷ 3**. The "independent path" was not independent
+- One of them saw the 47 GPa B0 and dismissed the warning ("synthetic data")
+- What found the error was a **different formula + comparison with the reference**
+
+</div>
+
+---
+
+# Amending the skill and testing again
+
+<div class="grid grid-cols-2 gap-5 mt-1 text-sm leading-6">
+<div class="p-3 rounded-xl bg-slate-100 text-xs leading-5">
+
+**Step 3, before**
+
+Reproduce the calculation without copying the author's script logic.
+
+**Step 3, after**
+
+Use an implementation **different** from the author's (another formulation, a library function, or a direct numerical calculation). Do not reuse the formula or the constants. If they differ, find out which one is right.
+
+**Plausibility:** compare with a reference; if it is far off, **do not accept it by assumption**.
+
+</div>
+<div>
+
+| Reviewer with the new skill | Verdict | Formula |
+|---|---|---|
+| wrong result #1 | not trustworthy | **found** |
+| wrong result #2 | not trustworthy | **found** |
+| **correct** result (control) | trustworthy | n/a |
+
+Both redid it with a polynomial, reached Cu ≈ 141 and Al ≈ 78 GPa, and the disagreement led them to the formula.
+
+</div>
+</div>
+
+<div class="mt-2 text-xs opacity-70 leading-5">
+The amendment was written <b>after</b> seeing this error, and the retest is on the same case: it is an indication, not proof. The control used a different author (Claude Haiku).
+</div>
+
+---
+
 # What the test does not prove
 
 <div class="mt-2 text-base leading-8">
 
-- **There is no control:** we did not test reviewers on **correct** results. A reviewer told to be critical may **reject what is right**
+- **Minimal control:** a single reviewer approved a **correct** result (from another author). A reviewer told to be critical may **reject what is right**, and that remains to be repeated
 - **Different models:** the author was Antigravity and the reviewer, Claude. Part of the gain may come from their being different
 - **Cases designed by us:** known traps, with documentation in the folder
 - **One run** per cell, no statistics
+- **The skill amendment came after the error**: it remains to be tested on a **new** method error
 - The reviewer **can also be wrong**: its verdict does not replace your own check
 
 </div>
@@ -324,6 +458,8 @@ The reviewer is a <b>second opinion</b>, not a guarantee. The final decision is 
 
 </div>
 <div class="p-3 rounded-xl bg-slate-100 text-sm leading-7">
+
+**No case of your own?** Use `caso-4-eos` from the downloads.
 
 **Then swap and talk**
 - Did the reviewer find something the author did not see?
@@ -354,3 +490,4 @@ Possible topics: security and permissions · privacy and cost · traceability an
 # References
 
 - Learn Harness Engineering (walkinglabs, MIT): <https://github.com/walkinglabs/learn-harness-engineering>
+- Delta test (parameters for case 4): Lejaeghere, Van Speybroeck, Van Oost, Cottenier, *Crit. Rev. Solid State Mater. Sci.* (2014), <http://arxiv.org/abs/1204.2733> · <https://github.com/molmod/DeltaCodesDFT>

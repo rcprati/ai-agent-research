@@ -37,8 +37,9 @@ Boas-vindas. Perguntar sobre a tarefa de casa: quem testou o próprio skill? Que
 2. **Anatomia de um bom pedido**
 3. **Contexto:** o que o agente enxerga
 4. **O revisor independente**
-5. **Mãos à obra:** em pares
-6. Combinados para a próxima aula
+5. **Um caso:** quando o revisor também erra
+6. **Mãos à obra:** em pares
+7. Combinados para a próxima aula
 
 </div>
 
@@ -134,7 +135,7 @@ O arquivo de instruções (<code>AGENTS.md</code>) guarda o que vale para <b>tod
 <div class="mt-3 text-sm leading-6">
 
 - O pedido reescrito é **mais longo**, e é isso mesmo: o tempo que se gasta escrevendo, não se gasta depois descobrindo o erro
-- Não testamos o efeito dele nos agentes de hoje; é uma **hipótese**, e o exercício de hoje a testa com o seu caso
+- Nos casos da Aula 1 não testamos o efeito dele; é uma **hipótese**. O caso 4 (adiante) traz um primeiro teste, e o exercício de hoje a testa com o seu caso
 
 </div>
 
@@ -241,7 +242,7 @@ A ideia vem da lição 9 do curso Learn Harness Engineering (separar quem faz de
 **Passos**
 1. Entenda o **pedido** e o resultado reportado
 2. **Leia os dados e a documentação** antes do raciocínio do autor
-3. **Refaça** por um caminho independente e depois rode o script do autor
+3. **Refaça** com uma implementação **diferente** da do autor, compare com uma referência, e depois rode o script do autor
 4. Procure **falhas silenciosas:** arquivos, parâmetros, unidades, faltantes, vazamento, escala, plausibilidade
 5. **Não corrija** o trabalho do autor: aponte e justifique
 
@@ -286,14 +287,147 @@ Revisores: Claude (8 execuções isoladas). Autores: Antigravity. A resposta de 
 
 ---
 
+# Caso 4: equação de estado de Cu e Al
+
+<div class="grid grid-cols-2 gap-5 mt-1 text-sm leading-6">
+<div>
+
+**O pedido (restrito)**
+
+> Escreva um script em python que ajuste uma equação de estado de Birch-Murnaghan aos dados de `resumo_eos.csv` e reporte V0, B0 e a0 para o Cu e o Al
+
+**Os dados**
+- 7 volumes por elemento, num `resumo_eos.csv` e um `.out` por ponto
+- O `.out` do Al a 102% do volume diz **"SCF NÃO CONVERGIU"**; o resumo **não** traz esse aviso
+
+</div>
+<div class="p-3 rounded-xl bg-slate-100 text-xs leading-5">
+
+**De onde vêm os números**
+
+Os parâmetros (V0, B0, B1) de Cu e Al são os do **Delta test** (referência WIEN2k): Lejaeghere, Van Speybroeck, Van Oost e Cottenier, *Crit. Rev. Solid State Mater. Sci.* (2014).
+
+<div class="mt-2">
+<b>As energias foram reconstruídas por nós</b> com Birch–Murnaghan, a partir desses parâmetros. <b>Não são saída de DFT</b>, e o ponto do Al foi alterado de propósito.
+</div>
+
+<div class="mt-2">
+Resposta certa: Cu <b>141,3 GPa</b>; Al <b>78,08 GPa</b> (sem o ponto não convergido).
+</div>
+
+</div>
+</div>
+
+---
+
+# O mesmo pedido, três autores
+
+<div class="text-sm">
+
+| Autor (1 execução por célula) | Pedido restrito | Pedido reescrito |
+|---|---|---|
+| Claude (agente isolado) | correto | correto |
+| Claude Haiku 5.5 | correto | correto |
+| OpenWork · gpt-6-luna | **errado** | correto |
+
+</div>
+
+<div class="mt-2 text-sm leading-6">
+
+**O que o OpenWork errou no pedido restrito**
+- Manteve o ponto **não convergido** do Al (V0 16,424 em vez de 16,480 Å³)
+- **Escreveu a fórmula errada** (`6 − 4x` onde deveria ser `6 − 4y`): B0 do Cu **47** GPa em vez de 141, do Al 18 em vez de 78
+- Fixou B1 = 4 (avisou, mas ninguém pediu)
+
+</div>
+
+<div class="mt-2 text-xs opacity-70 leading-5">
+O erro de fórmula não prova que o pedido restrito causou a falha: pode ter sido sorte. O pedido reescrito mudou a <b>conferência dos pontos</b>; não dá para separar os efeitos com uma execução.
+</div>
+
+---
+
+# O autor, perguntado, defende o erro
+
+<div class="mt-2 text-base leading-8">
+
+1. Pedimos que **explicasse a fórmula**: ele a repetiu, errada, como a forma padrão, citando Birch (1947)
+2. Perguntamos se o B0 do Cu era **compatível com o valor conhecido** (~140 GPa): reconheceu o problema ("quase um fator 3")
+3. Mas atribuiu a causa **aos dados** ("curva rasa", poucos pontos), não à fórmula
+
+</div>
+
+<div class="mt-3 p-3 rounded-xl bg-amber-50 border border-amber-200 text-sm text-center">
+Pedir que quem fez <b>confira o próprio trabalho</b> reproduz o raciocínio. Os dados estavam certos: com a fórmula corrigida (e B1 = 4), o Cu dá 141,6 GPa.
+</div>
+
+---
+
+# E o revisor? Achou o ponto, perdeu a fórmula
+
+<div class="text-sm">
+
+| Revisor (Claude, 1 execução) | `Al_102` | Fórmula | O "refit" dele |
+|---|---|---|---|
+| skill `revisar-resultado` (versão 1) | achou | **não** | Cu 47,1 · Al 26,0 |
+| sem skill ("revise criticamente") | achou | **não** | Al 26,1 |
+
+</div>
+
+<div class="mt-2 text-base leading-7">
+
+- Os dois **reaproveitaram o modelo do autor**: os valores deles são o certo **÷ 3**. O "caminho independente" não foi independente
+- Um deles viu o B0 de 47 GPa e descartou o alerta ("dados sintéticos")
+- Quem achou o erro foi uma **fórmula diferente + comparação com a referência**
+
+</div>
+
+---
+
+# Emendando o skill e testando de novo
+
+<div class="grid grid-cols-2 gap-5 mt-1 text-sm leading-6">
+<div class="p-3 rounded-xl bg-slate-100 text-xs leading-5">
+
+**Passo 3, antes**
+
+Reproduza o cálculo sem copiar a lógica do script do autor.
+
+**Passo 3, depois**
+
+Use uma implementação **diferente** da do autor (outra formulação, função de biblioteca ou cálculo numérico direto). Não reaproveite a fórmula nem as constantes. Se divergirem, descubra qual está certo.
+
+**Plausibilidade:** compare com uma referência; se estiver muito fora, **não aceite por suposição**.
+
+</div>
+<div>
+
+| Revisor com o skill novo | Veredito | Fórmula |
+|---|---|---|
+| resultado errado #1 | não confiável | **achou** |
+| resultado errado #2 | não confiável | **achou** |
+| resultado **correto** (controle) | confiável | n/a |
+
+Os dois refizeram por polinômio, chegaram a Cu ≈ 141 e Al ≈ 78 GPa, e a divergência os levou à fórmula.
+
+</div>
+</div>
+
+<div class="mt-2 text-xs opacity-70 leading-5">
+A emenda foi escrita <b>depois</b> de ver este erro, e o reteste é no mesmo caso: é um indício, não uma prova. O controle usou outro autor (Claude Haiku).
+</div>
+
+---
+
 # O que o teste não prova
 
 <div class="mt-2 text-base leading-8">
 
-- **Falta o controle:** não testamos revisores diante de resultados **corretos**. Um revisor mandado ser crítico pode **rejeitar o que está certo**
+- **Controle mínimo:** um único revisor aprovou um resultado **correto** (de outro autor). Um revisor mandado ser crítico pode **rejeitar o que está certo**, e isso falta repetir
 - **Modelos diferentes:** o autor era o Antigravity e o revisor, o Claude. Parte do ganho pode vir de serem diferentes
 - **Casos desenhados por nós:** armadilhas conhecidas, com documentação na pasta
 - **Uma execução** por célula, sem estatística
+- **A emenda do skill veio depois do erro**: falta testá-la em um erro de método **novo**
 - O revisor **também pode errar**: o veredito dele não substitui a sua conferência
 
 </div>
@@ -320,6 +454,8 @@ O revisor é uma <b>segunda opinião</b>, não uma garantia. A decisão final co
 
 </div>
 <div class="p-3 rounded-xl bg-slate-100 text-sm leading-7">
+
+**Sem caso próprio?** Use o `caso-4-eos` dos downloads.
 
 **Depois, trocar e conversar**
 - O revisor achou algo que a autora não viu?
@@ -350,3 +486,4 @@ Possíveis temas: segurança e permissões · privacidade e custo · rastreabili
 # Referências
 
 - Learn Harness Engineering (walkinglabs, MIT): <https://github.com/walkinglabs/learn-harness-engineering>
+- Delta test (parâmetros do caso 4): Lejaeghere, Van Speybroeck, Van Oost, Cottenier, *Crit. Rev. Solid State Mater. Sci.* (2014), <http://arxiv.org/abs/1204.2733> · <https://github.com/molmod/DeltaCodesDFT>

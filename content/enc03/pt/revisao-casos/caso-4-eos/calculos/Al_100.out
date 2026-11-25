@@ -1,0 +1,6 @@
+EOS run  elemento=Al  escala_volume=1.00
+celula fcc convencional, 4 atomos, a = 4.03957 Ang, V = 65.9184 Ang^3
+funcional PBE, celula fixa (sem relaxacao)
+SCF: 11 iteracoes
+SCF convergido (dE < 1e-6 eV)
+ENERGIA TOTAL (eV por celula): -14.960000
