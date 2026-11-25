@@ -37,7 +37,7 @@ Welcome. Ask about the homework: who tested their own skill? Who brought a case 
 2. **Anatomy of a good request**
 3. **Context:** what the agent sees
 4. **The independent reviewer**
-5. **A case:** when the reviewer is wrong too
+5. **A case:** when the reviewer is wrong too, and a skill that helps
 6. **Hands-on:** in pairs
 7. Agreements for the next lesson
 
@@ -423,6 +423,64 @@ The amendment was written <b>after</b> seeing this error, and the retest is on t
 
 ---
 
+# Our own skill, installed: `check-inputs`
+
+<div class="text-sm leading-6">
+
+**Same task and data as case 4**, restricted request, in OpenWork (`gpt-6-luna`). Two folders: no skill, and with `verificar-entradas` in `.agents/skills/`. The agent said it loaded the skill.
+
+</div>
+
+<div class="text-sm mt-1">
+
+| Condition | Runs | `Al_102` discarded | Al B0 reported (right: 78.08) |
+|---|---|---|---|
+| No skill | 3 | **0 of 3** | 18.3 · 63.1 · 55.0 GPa |
+| With `verificar-entradas` | 2 | **2 of 2** | 78.08 · 78.08 GPa |
+
+</div>
+
+<div class="mt-3 text-sm leading-6">
+
+- With the skill, both agents **opened the `.out` of each summary row** and discarded the unconverged point
+- Without the skill, none did that check: they read only `resumo_eos.csv`
+
+</div>
+
+---
+
+# What the skill changed, and what it did not
+
+<div class="grid grid-cols-2 gap-5 mt-1 text-sm leading-6">
+<div class="p-3 rounded-xl bg-green-50 border border-green-200">
+
+**With the skill (in the code)**
+- Opens the `.out` of each row and requires "SCF convergido"
+- **Compares** the summary's volume and energy with the source file
+- Prints the **discarded rows, with the reason**
+
+</div>
+<div class="p-3 rounded-xl bg-red-50">
+
+**Without the skill**
+- Summary only; no convergence filter
+- One run warned that B′ "hit the limit"; another **fixed B′ = 4** to avoid the limit: the symptom treated, the cause ignored
+
+</div>
+</div>
+
+<div class="mt-2 text-sm leading-6">
+
+**What did not change:** the wrong formula (1 of 3 without the skill) is not covered by it. What catches it is the reviewer with the amendment.
+
+</div>
+
+<div class="mt-2 p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs leading-5">
+<b>Limits:</b> 2 runs against 3, no randomization or blinding, a single model. The best possible p-value with this arrangement is 0.1: it is an <b>indication</b>, not proof. The skill's code depends on the format of this case's <code>.out</code> files.
+</div>
+
+---
+
 # What the test does not prove
 
 <div class="mt-2 text-base leading-8">
@@ -432,6 +490,7 @@ The amendment was written <b>after</b> seeing this error, and the retest is on t
 - **Cases designed by us:** known traps, with documentation in the folder
 - **One run** per cell, no statistics
 - **The skill amendment came after the error**: it remains to be tested on a **new** method error
+- **`verificar-entradas`** was tested in 2 runs against 3, without randomization
 - The reviewer **can also be wrong**: its verdict does not replace your own check
 
 </div>

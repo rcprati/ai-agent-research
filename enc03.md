@@ -37,7 +37,7 @@ Boas-vindas. Perguntar sobre a tarefa de casa: quem testou o próprio skill? Que
 2. **Anatomia de um bom pedido**
 3. **Contexto:** o que o agente enxerga
 4. **O revisor independente**
-5. **Um caso:** quando o revisor também erra
+5. **Um caso:** quando o revisor também erra, e um skill que ajuda
 6. **Mãos à obra:** em pares
 7. Combinados para a próxima aula
 
@@ -419,6 +419,64 @@ A emenda foi escrita <b>depois</b> de ver este erro, e o reteste é no mesmo cas
 
 ---
 
+# Um skill nosso, instalado: `verificar-entradas`
+
+<div class="text-sm leading-6">
+
+**Mesma tarefa e mesmos dados do caso 4**, pedido restrito, no OpenWork (`gpt-6-luna`). Duas pastas: sem skill e com o `verificar-entradas` em `.agents/skills/`. O agente disse ter carregado o skill.
+
+</div>
+
+<div class="text-sm mt-1">
+
+| Condição | Execuções | `Al_102` descartado | B0 do Al reportado (certo: 78,08) |
+|---|---|---|---|
+| Sem skill | 3 | **0 de 3** | 18,3 · 63,1 · 55,0 GPa |
+| Com `verificar-entradas` | 2 | **2 de 2** | 78,08 · 78,08 GPa |
+
+</div>
+
+<div class="mt-3 text-sm leading-6">
+
+- Com o skill, os dois agentes **abriram o `.out` de cada linha do resumo** e descartaram o ponto não convergido
+- Sem o skill, nenhum fez essa checagem: leram só o `resumo_eos.csv`
+
+</div>
+
+---
+
+# O que o skill mudou, e o que não mudou
+
+<div class="grid grid-cols-2 gap-5 mt-1 text-sm leading-6">
+<div class="p-3 rounded-xl bg-green-50 border border-green-200">
+
+**Com o skill (no código)**
+- Abre o `.out` de cada linha e exige "SCF convergido"
+- **Compara** volume e energia do resumo com o arquivo de origem
+- Imprime os **descartados, com o motivo**
+
+</div>
+<div class="p-3 rounded-xl bg-red-50">
+
+**Sem o skill**
+- Só o resumo; sem filtro de convergência
+- Uma execução avisou que B′ "atingiu o limite"; outra **fixou B′ = 4** para evitar o limite: o sintoma tratado, a causa ignorada
+
+</div>
+</div>
+
+<div class="mt-2 text-sm leading-6">
+
+**O que não mudou:** a fórmula errada (1 de 3 sem skill) não é coberta por ele. Quem a pega é o revisor com a emenda.
+
+</div>
+
+<div class="mt-2 p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs leading-5">
+<b>Limites:</b> 2 execuções contra 3, sem sorteio nem cegamento, um só modelo. O melhor valor-p possível com esse arranjo é 0,1: é um <b>indício</b>, não uma prova. O código do skill depende do formato dos <code>.out</code> deste caso.
+</div>
+
+---
+
 # O que o teste não prova
 
 <div class="mt-2 text-base leading-8">
@@ -428,6 +486,7 @@ A emenda foi escrita <b>depois</b> de ver este erro, e o reteste é no mesmo cas
 - **Casos desenhados por nós:** armadilhas conhecidas, com documentação na pasta
 - **Uma execução** por célula, sem estatística
 - **A emenda do skill veio depois do erro**: falta testá-la em um erro de método **novo**
+- **O `verificar-entradas`** foi testado em 2 execuções contra 3, sem sorteio
 - O revisor **também pode errar**: o veredito dele não substitui a sua conferência
 
 </div>
